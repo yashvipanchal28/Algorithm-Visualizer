@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 10px;
+  background: #181818;
+}
+
+.hidden {
+  opacity:0;
+}
+.console-container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  text-align:left;
+  color: lightblue;
+  margin: 10px;
+}
+.console-underscore {
+  display:inline-block;
+  position:relative;
+  color:white;
+  top:-0.14em;
+  left:5px;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: [r0] 80px [mid] 550px [r1];
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.item-codeEditor-header{
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: r0;
+  grid-row-end: span mid;
+  padding: 7px;
+  background-color: #404040;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+#codeEditorSubmit {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: lightblue;
+  background-color: #181818;
+  margin-left: 10px;
+}
+
+#codeEditorSubmit:hover {
+  color: white;
+  background-color: #252525;
+  border-color: #252525;
+  margin-left: 10px;
+}
+
+#codeEditorAlert {
+  padding: 8px;
+  width: 300px;
+  font-size: 16px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+}
+
+.item-codeEditor {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: mid;
+  grid-row-end: span r1;
+  padding: 3px;
+  background-color: #404040;
+
+  grid-column: 1 / 2;
+  display: grid;
+  grid: subgrid / subgrid;
+}
+
+.item-av {
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: r0;
+  grid-row-end: span r1;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  
+  grid-column: 2 / 3;
+  display: grid;
+  grid: subgrid / subgrid;
+}
+
+#codeEditor {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  border-color: grey;
+}
+
+#av {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  border-color: grey;
+  width: 100%;
+  height: 630px;
+}
+
+.jsavcounter {
+  position: absolute;
+  top: 15px;
+}
+
+.jsavtree {
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
+
+.jsavgraph {
+  margin-top: 50px;
+}
+
+.jsavlabel {
+  font-size: 200%;
+  text-align: center;
+  margin: 30px 0 10px 0;
+}
+
+.jsavedgelabel {
+  font-size: 100%;
+  margin: 0;
+}

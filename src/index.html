@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlgoViz</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css'/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<div class='console-container'>
+  <span id='text'></span>
+  <div class='console-underscore' id='console'>&#95;</div>
+</div>
+<div class="mainContainer" id="workspace">
+  <div class="item-codeEditor-header">
+    <button type="button" class="btn btn-dark" id="codeEditorSubmit">Submit</button>
+    <div class="alert alert-dark" role="alert" id="codeEditorAlert"> Add Your Code Below! </div>
+  </div>
+  <div class="item-codeEditor">
+      <div id="codeEditor"></div>
+  </div>
+  <div class="item-av" id="divAv">
+    <div id="av"></div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+  <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+  <script>
+		require.config({ paths: { vs: '../node_modules/monaco-editor/min/vs' } });
+		require(['vs/editor/editor.main'], function () {
+			window.editor = monaco.editor.create(document.getElementById('codeEditor'), {
+				value: ['void solve() {', '\t//enter your code here', '}'].join('\n'),
+				language: 'cpp',
+        theme: 'vs-dark',
+        automaticLayout: true
+			});
+		});
+	</script>
+  <script src="index.js"></script>
+</html>
